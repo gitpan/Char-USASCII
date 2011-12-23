@@ -233,5 +233,5 @@ See also code table:
 
 SEE ALSO
 
-perl, Sjis.pm
+perl, USASCII.pm, Eusascii.pm, jacode.pl
 
