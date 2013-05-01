@@ -28,7 +28,7 @@ BEGIN {
 # (and so on)
 
 BEGIN { eval q{ use vars qw($VERSION) } }
-$VERSION = sprintf '%d.%02d', q$Revision: 0.87 $ =~ /(\d+)/xmsg;
+$VERSION = sprintf '%d.%02d', q$Revision: 0.88 $ =~ /(\d+)/xmsg;
 
 BEGIN {
     my $PERL5LIB = __FILE__;
@@ -289,7 +289,6 @@ sub USASCII::rindex($$;$);
 # Character class
 #
 BEGIN { eval q{ use vars qw(
-    $anchor
     $dot
     $dot_s
     $eD
@@ -318,7 +317,7 @@ BEGIN { eval q{ use vars qw(
     $eb
     $eB
 ) } }
-${Eusascii::anchor}      = qr{\G(?:[\x00-\xFF])*?};
+
 ${Eusascii::dot}         = qr{(?:[^\x0A])};
 ${Eusascii::dot_s}       = qr{(?:[\x00-\xFF])};
 ${Eusascii::eD}          = qr{(?:[^0-9])};
@@ -354,6 +353,35 @@ ${Eusascii::not_word}    = qr{(?:[^\x30-\x39\x41-\x5A\x5F\x61-\x7A])};
 ${Eusascii::not_xdigit}  = qr{(?:[^\x30-\x39\x41-\x46\x61-\x66])};
 ${Eusascii::eb}          = qr{(?:\A(?=[0-9A-Z_a-z])|(?<=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF])(?=[0-9A-Z_a-z])|(?<=[0-9A-Z_a-z])(?=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF]|\z))};
 ${Eusascii::eB}          = qr{(?:(?<=[0-9A-Z_a-z])(?=[0-9A-Z_a-z])|(?<=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF])(?=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF]))};
+
+# avoid: Name "Eusascii::foo" used only once: possible typo at here.
+${Eusascii::dot}         = ${Eusascii::dot};
+${Eusascii::dot_s}       = ${Eusascii::dot_s};
+${Eusascii::eD}          = ${Eusascii::eD};
+${Eusascii::eS}          = ${Eusascii::eS};
+${Eusascii::eW}          = ${Eusascii::eW};
+${Eusascii::eH}          = ${Eusascii::eH};
+${Eusascii::eV}          = ${Eusascii::eV};
+${Eusascii::eR}          = ${Eusascii::eR};
+${Eusascii::eN}          = ${Eusascii::eN};
+${Eusascii::not_alnum}   = ${Eusascii::not_alnum};
+${Eusascii::not_alpha}   = ${Eusascii::not_alpha};
+${Eusascii::not_ascii}   = ${Eusascii::not_ascii};
+${Eusascii::not_blank}   = ${Eusascii::not_blank};
+${Eusascii::not_cntrl}   = ${Eusascii::not_cntrl};
+${Eusascii::not_digit}   = ${Eusascii::not_digit};
+${Eusascii::not_graph}   = ${Eusascii::not_graph};
+${Eusascii::not_lower}   = ${Eusascii::not_lower};
+${Eusascii::not_lower_i} = ${Eusascii::not_lower_i};
+${Eusascii::not_print}   = ${Eusascii::not_print};
+${Eusascii::not_punct}   = ${Eusascii::not_punct};
+${Eusascii::not_space}   = ${Eusascii::not_space};
+${Eusascii::not_upper}   = ${Eusascii::not_upper};
+${Eusascii::not_upper_i} = ${Eusascii::not_upper_i};
+${Eusascii::not_word}    = ${Eusascii::not_word};
+${Eusascii::not_xdigit}  = ${Eusascii::not_xdigit};
+${Eusascii::eb}          = ${Eusascii::eb};
+${Eusascii::eB}          = ${Eusascii::eB};
 
 #
 # US-ASCII split
