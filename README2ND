@@ -1,14 +1,12 @@
 NAME
 
-       Char::USASCII - Source code filter for US-ASCII script (Imitation JPerl)
+       USASCII - Source code filter for US-ASCII script (Imitation JPerl)
 
 SYNOPSIS
 
     In your script:
 
-      use Char::USASCII; # CPAN formal style
-         or
-      use USASCII; # casual style
+      use USASCII;
 
     At command prompt:
 
