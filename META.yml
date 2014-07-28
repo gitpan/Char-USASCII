@@ -1,7 +1,7 @@
 --- #YAML:1.0
-name: USASCII
+name: Char::USASCII
 abstract: Source code filter for US-ASCII script (Imitation JPerl)
-version: 0.96
+version: 0.97
 author:
   - INABA Hitoshi <ina@cpan.org>
 license: perl
